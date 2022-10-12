@@ -13,8 +13,6 @@ def clean_data():
 
     df = pd.read_csv("solicitudes_credito.csv", sep=";", )
     df= df[df.columns[1:]]
-    df.drop_duplicates(inplace=True)
-    df.dropna(inplace=True)
     df.columns.values
 
     # sexo
@@ -49,6 +47,7 @@ def clean_data():
     df['monto_del_credito']=df['monto_del_credito'].str.replace("$","")
     df['monto_del_credito']=df['monto_del_credito'].str.strip()
     df['monto_del_credito'] = df['monto_del_credito'].apply(pd.to_numeric, downcast="integer", errors='ignore')
-
+    df.drop_duplicates(inplace=True)
+    df.dropna(inplace=True)
 
     return df
