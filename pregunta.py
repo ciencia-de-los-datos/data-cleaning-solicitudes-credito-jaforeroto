@@ -18,6 +18,7 @@ def clean_data():
     df = pd.read_csv("solicitudes_credito.csv", sep=";")
     df=df.dropna()
     df.columns.values
+    df.drop_duplicates(inplace=True)
 
     # Sexo
     df['sexo']= df['sexo'].str.lower() 
