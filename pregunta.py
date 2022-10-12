@@ -12,6 +12,8 @@ import pandas as pd
 
 def clean_data():
 
+    # Convertir textos en minuscula
+
     df = pd.read_csv("solicitudes_credito.csv", sep=";")
     df=df.dropna() 
     df['sexo'] = df['sexo'].str.lower()
@@ -19,6 +21,10 @@ def clean_data():
     df['idea_negocio'] = df['idea_negocio'].str.lower()
     df['barrio'] = df['barrio'].str.lower()
     df['línea_credito'] = df['línea_credito'].str.lower()
+
+    # idea de negocio
+    df['idea_negocio'] = df['idea_negocio'].str.strip()
+
 
 
 
