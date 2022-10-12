@@ -12,6 +12,7 @@ import pandas as pd
 def clean_data():
 
     df = pd.read_csv("solicitudes_credito.csv", sep=";", )
+    df= df[df.columns[1:]]
     df.columns.values
 
     # sexo
@@ -30,6 +31,7 @@ def clean_data():
     df['barrio']= df['barrio'].str.lower()
     df['barrio']=df['barrio'].str.replace("-","_")
     df['barrio']=df['barrio'].str.replace("_"," ")
+    df['barrio']=df['barrio'].str.strip()
 
     # línea_credito
     df['línea_credito']= df['línea_credito'].str.lower()
