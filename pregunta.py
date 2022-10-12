@@ -6,12 +6,16 @@ Realice la limpieza del dataframe. Los tests evaluan si la limpieza fue realizad
 correctamente. Tenga en cuenta datos faltantes y duplicados.
 
 """
+
 import pandas as pd
 
 
 def clean_data():
 
     df = pd.read_csv("solicitudes_credito.csv", sep=";")
+    df=df.dropna() 
+    df['sexo'] = df['sexo'].str.lower()
+    
 
 
 
