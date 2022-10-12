@@ -31,7 +31,6 @@ def clean_data():
     df['barrio']= df['barrio'].str.lower()
     df['barrio']=df['barrio'].str.replace("-","_")
     df['barrio']=df['barrio'].str.replace("_"," ")
-    df['barrio']=df['barrio'].str.strip()
 
     # línea_credito
     df['línea_credito']= df['línea_credito'].str.lower()
