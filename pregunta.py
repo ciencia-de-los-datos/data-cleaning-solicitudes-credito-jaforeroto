@@ -12,7 +12,6 @@ import pandas as pd
 def clean_data():
 
     df = pd.read_csv("solicitudes_credito.csv", sep=";", )
-    df= df[df.columns[1:]]
     df.columns.values
 
     # sexo
