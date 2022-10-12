@@ -9,16 +9,12 @@ correctamente. Tenga en cuenta datos faltantes y duplicados.
 
 import pandas as pd
 
-
-import pandas as pd
-
-
 def clean_data():
 
     df = pd.read_csv("solicitudes_credito.csv", sep=";")
-    df=df.dropna()
-    df.columns.values
+    df= df[df.columns[1:]]
     df.drop_duplicates(inplace=True)
+    df.dropna(inplace=True)
 
     # Sexo
     df['sexo']= df['sexo'].str.lower() 
