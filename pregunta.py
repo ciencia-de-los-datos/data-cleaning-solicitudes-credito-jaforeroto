@@ -13,6 +13,6 @@ def clean_data():
 
     df = pd.read_csv("solicitudes_credito.csv", sep=";")
 
-    
+
 
     return df
